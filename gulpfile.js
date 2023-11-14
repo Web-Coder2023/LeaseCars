@@ -69,6 +69,7 @@ function scripts() {
 
 function watching() {
     browserSync.init({
+        open: false,
         server: {
             baseDir: "app/"
         }

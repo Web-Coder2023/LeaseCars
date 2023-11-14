@@ -13,6 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.29.0",
+    "cwebp": "^3.0.0",
+    "cwebp-bin": "^8.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-changed": "^4.0.3",

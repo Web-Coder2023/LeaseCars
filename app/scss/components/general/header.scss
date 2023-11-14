@@ -1,11 +1,132 @@
-.header{
-   background-color: black;
-   padding: 20px 0;
-   &__logo{
-      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      font-weight: 700;
-      font-size: 35px;
-      color: aliceblue;
-      text-decoration: none;
+.header {
+   color: #fff;
+   background-color: #151515;
+   position: relative;
+   &__inner {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 40px;
+      padding-bottom: 45px;
+   }
+}
+
+.menu {
+   display: flex;
+   align-items: flex-end;
+
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 35px;
+
+      &-link {
+         font-size: 16px;
+         font-weight: 700;
+         color: inherit;
+      }
+   }
+
+   &__burger {
+      width: 40px;
+      height: 27px;
+      position: relative;
+      z-index: 10;
+      margin: auto 0;
+      display: none;
+
+      &::before {
+         content: "";
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 2px;
+         border-radius: 4px;
+         background-color: #fff;
+         transition: 0.5s;
+      }
+
+      &::after {
+         content: "";
+         display: block;
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         height: 2px;
+         border-radius: 4px;
+         background-color: #fff;
+         transition: 0.5s;
+      }
+
+      span {
+         position: absolute;
+         top: 50%;
+         left: 0;
+         width: 100%;
+         height: 2px;
+         border-radius: 4px;
+         background-color: #fff;
+         transform: translateY(-50%);
+         transition: 0.5s;
+      }
+   }
+
+   &__burger._active {
+
+      &::before {
+         transform: rotate(45deg);
+         top: 45%;
+      }
+
+      &::after {
+         transform: rotate(-45deg);
+         bottom: 45%;
+      }
+
+      span {
+         transform: scale(0);
+      }
+   }
+}
+@media (max-width: 550px) {
+   .menu {
+      &__burger{
+         display: block;
+      }
+      &__body {
+         position: absolute;
+         top: 0;
+         right: -100%;
+         overflow: hidden;
+         z-index: 10;
+         background-color: #151515;
+         transition: all 0.5s ease-in-out;
+         height: 100vh;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      &__list {
+         display: flex;
+         flex-direction: column;
+         padding: 30px 20px 40px 20px;
+      }
+   }
+}
+.first-screen{
+   position: relative;
+}
+.wrapper.header-main{
+   header{
+      background: transparent;
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      right: 0;
    }
 }

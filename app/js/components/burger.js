@@ -1,22 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-   const menuTitle = document.querySelector(".header__burger");
-   const menuList = document.querySelector(".header__menu-body");
- 
-   menuTitle.addEventListener("click", function () {
-     if (menuList.classList.contains("active")) {
-       menuList.style.maxHeight = "0";
-       menuList.classList.remove("active");
-     } else {
-       menuList.style.maxHeight = "none";
-       const computedHeight = getComputedStyle(menuList).height;
-       menuList.style.maxHeight = "0";
-       menuList.classList.add("active");
- 
-       // Задержка для корректной анимации
-       setTimeout(() => {
-         menuList.style.height = computedHeight;
-       }, 0);
-     }
-   });
- });
- 
+let burger = () => {
+  let header = document.querySelector('header');
+  let menuBody = header.querySelector('.menu__body');
+  let menuBurger = header.querySelector('.menu__burger');
+
+  menuBurger.addEventListener('click', () => {
+    menuBurger.classList.toggle('_active');
+    if (menuBurger.classList.contains('_active')) {
+      menuBody.style.right = '0';
+    } else {
+      menuBody.style.right = '-100%';
+    }
+  });
+}
+burger();

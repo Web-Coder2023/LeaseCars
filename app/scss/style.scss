@@ -1,10 +1,20 @@
 @import './fonts/fonts.scss';
+@import './libs/swiper-bundle.min.scss';
 @import './libs/global.scss';
 @import './constants/base.scss';
 
-
 @import './components/general/header.scss';
-@import './components/general/main.scss';
-@import './components/general/footer.scss';
-@import './libs/swiper.scss';
 
+/* Index page */
+@import './components/section/index/top.scss';
+@import './components/section/index/cause.scss';
+@import './components/section/index/howdoes.scss';
+@import './components/section/index/welcome.scss';
+@import './components/section/index/important.scss';
+/* Contact page */
+@import './components/section/contacts/contacts-form.scss';
+@import './components/section/contacts/contacts-state.scss';
+/*New cars page*/
+@import './components/section/new-cars/new-cars-catalog.scss';
+
+@import './components/general/footer.scss';
